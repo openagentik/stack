@@ -1,49 +1,45 @@
-# For solo founders
+# Solo founders
 
-Most of the openagentik stack is **other people's open work** — Paperclip's spec, Anthropic's SKILL.md format, agentskill.sh's directory, paperasse's SKILLs, ostack's engineering workflow. We curate and compose it. Here's how to engage as a solo founder.
+Paths through the openagentik index for someone running a one-person business.
 
-## Pick the entry point that matches you
+## If you want to run an agency tonight
 
-### "I want to run an agency tonight"
-
-Fork an agency from [openagentik/companies](https://github.com/openagentik/companies) and drop it into a runtime.
+Two pre-wrapped agencies ship today in [openagentik/companies](https://github.com/openagentik/companies):
 
 - **[paperasse](https://github.com/openagentik/companies/tree/main/paperasse)** — French bureaucracy: comptable, CAC, contrôleur fiscal, fiscaliste, notaire, syndic. Vendored from [romainsimon/paperasse](https://github.com/romainsimon/paperasse).
-- **[ostack](https://github.com/openagentik/companies/tree/main/ostack)** — Engineering team for Claude Code: CEO, CTO, Designer, QA, Release. Vendored from [mr-daedalium/ostack](https://github.com/mr-daedalium/ostack) ← [garrytan/gstack](https://github.com/garrytan/gstack).
+- **[ostack](https://github.com/openagentik/companies/tree/main/ostack)** — engineering team for Claude Code: CEO, CTO, Designer, QA, Release. Vendored from [mr-daedalium/ostack](https://github.com/mr-daedalium/ostack) ← [garrytan/gstack](https://github.com/garrytan/gstack).
 
-Each is a folder. Clone, validate, hand to a runtime ([Paperclip](https://github.com/paperclipai/paperclip), Guilde, or your own).
+More entries in [paperclipai/companies](https://github.com/paperclipai/companies) (gstack, agency-agents, Trail of Bits Security, K-Dense Science Lab, …).
 
-### "I want to build my own"
+## If you want to build your own
 
-Start from [openagentik/templates](https://github.com/openagentik/templates) — `solo-founder`, `small-team`, or `minimal`. Replace `<EDIT_ME>` markers, vendor your own skills, validate, run.
+Start from a shape in [openagentik/templates](https://github.com/openagentik/templates):
 
-### "I want to read the spec first"
+- `minimal` — bare valid agency (1 agent).
+- `solo-founder` — you + AI assistant (2 agents).
+- `small-team` — CEO + 3 specialists (4 agents).
 
-[agencies-sh/spec](https://github.com/agencies-sh/spec) — agentagencies/v1 in ~10 markdown files. Extends [agentcompanies/v1](https://agentcompanies.io) (Paperclip).
+Each ships full canonical layout, validates clean, and uses `<EDIT_ME>` markers to point you at every editable field.
 
-### "I want to browse what others have built"
+## Engines
 
-[openagentik/awesome-agentik](https://github.com/openagentik/awesome-agentik) — curated list of agencies, runtimes, skill directories, tooling, related specs.
+Agency packages are filesystem layouts. Drop them into one of:
 
-## What this stack assumes about you
+- **[Paperclip](https://github.com/paperclipai/paperclip)** — open-source, agentcompanies/v1.
+- **[Guilde](https://guilde.work)** — closed-source SaaS, agentagencies/v1.
+- Your own — the [spec](https://github.com/agencies-sh/spec) is small enough to implement in a weekend.
 
-- You're comfortable cloning a git repo and reading markdown.
-- You'll pick a runtime (Paperclip is open and works today; Guilde is paid SaaS; you can also build your own).
-- You'll pay for an LLM API (Anthropic, OpenAI, Mistral, etc.). The stack is provider-agnostic — your engine handles the choice.
+## Skills
 
-## What this stack doesn't promise
+Vendor SKILLs into your agency's `skills/<slug>/SKILL.md`. Discovery: [agentskill.sh](https://agentskill.sh) (107k+ indexed by Yuki Capital).
 
-- A no-code wizard today. The CLI ([openagentik/cli](https://github.com/openagentik/cli)) is planned for Q3 2026. Until then, expect to clone + edit files manually or hire a developer for ~2-3 hours of one-off setup.
-- A hosted dashboard. The stack is filesystem-first — agencies live in folders, you run them in your engine of choice.
-- Plug-and-play with closed AI ops platforms. Most operate in their own sandbox; an open stack lives outside it.
+## Sequence
 
-## When you outgrow a piece
+1. Browse [openagentik/companies](https://github.com/openagentik/companies). If something fits, fork that folder.
+2. Otherwise, fork a template from [openagentik/templates](https://github.com/openagentik/templates).
+3. Pick an engine. Plug your LLM API key.
+4. Iterate the manifests as the agency tells you what's missing.
 
-Every layer is swappable:
+## Where to ask
 
-- The catalog doesn't fit? Fork to your own repo.
-- The validator is too strict? Write your own — it's ~150 LOC.
-- The engine is wrong? Move the agency folder to a different engine.
-- The spec missed something? Open an issue at [agencies-sh/spec](https://github.com/agencies-sh/spec/issues).
-
-Nothing is locked in. That's the point.
+[openagentik discussions](https://github.com/openagentik/.github/discussions).

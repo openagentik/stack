@@ -1,45 +1,40 @@
-# For non-coders
+# Non-coders
 
-The stack is **runnable today by a developer**. A no-code path is planned but not ready yet. Here's what you can do without writing code:
+What's accessible today without writing code, what isn't, and what's coming.
 
-## 1. Browse what's there
+## Readable today (no install)
 
-Agencies are markdown files. You can read them on GitHub like a book, no install needed:
+Agencies are markdown. Browse them on GitHub like a book:
 
-- **[paperasse](https://github.com/openagentik/companies/tree/main/paperasse)** — French bureaucracy. Open `paperasse/README.md`, then `agents/` to see how an AI accountant, AI notary, and AI tax inspector are described.
-- **[ostack](https://github.com/openagentik/companies/tree/main/ostack)** — Software engineering. Open `ostack/agents/` for CEO, CTO, Designer, QA, Release roles.
-- **[awesome-agentik](https://github.com/openagentik/awesome-agentik)** — curated list across the whole ecosystem (other catalogs, runtimes, related specs).
+- **[paperasse](https://github.com/openagentik/companies/tree/main/paperasse)** — French bureaucracy. Open `agents/` to read each role.
+- **[ostack](https://github.com/openagentik/companies/tree/main/ostack)** — software engineering. Open `agents/` for CEO, CTO, Designer, QA, Release.
+- **[awesome-agentik](https://github.com/openagentik/awesome-agentik)** — curated list across the whole ecosystem.
 
-If the structure makes sense to you on paper, you're ready for step 2.
+If the structure makes sense, a developer can wire it up in 2-3 hours.
 
-## 2. Hire a developer for a one-off setup
+## Needs a developer (today)
 
-A developer can clone an agency and wire it to a runtime in about 2-3 hours. One-off €200-500 spend (Upwork, Malt, Fiverr Pro). After that, you operate the agency through your runtime's UI — no terminal needed.
+A developer can clone an agency, install a runtime, and hand you a dashboard URL. Typical brief:
 
-What the developer does:
+> "Set up [paperasse / ostack / a custom agency] from openagentik/companies on Paperclip with my [Anthropic / OpenAI / Mistral] key. Show me how to operate it through the dashboard."
 
-1. Clones [openagentik/companies](https://github.com/openagentik/companies)
-2. Picks the agency that fits you (paperasse, ostack, or a custom one)
-3. Installs a runtime ([Paperclip](https://github.com/paperclipai/paperclip) is open-source; Guilde is paid SaaS)
-4. Plugs in your LLM API key (Anthropic / OpenAI / Mistral / …)
-5. Hands you the dashboard URL
+One-off cost ~€200-500 (Upwork, Malt, Fiverr Pro). Then you operate through the runtime's UI — no terminal needed.
 
-Brief them with: "Set up [agency name] from openagentik/companies on Paperclip with my Anthropic key. Show me how to operate it through the dashboard."
+## Coming Q3 2026
 
-## 3. Wait for the wizard (Q3 2026)
+[openagentik/cli](https://github.com/openagentik/cli) is planned: download, double-click, answer 3 questions, agency running. Watch that repo for releases.
 
-[openagentik/cli](https://github.com/openagentik/cli) will be: download, double-click, answer 3 questions, agency running. Watch that repo for releases.
+## Engines
 
-## What you don't need to learn
+Pick one when hiring help:
 
-- Git, terminal commands, Markdown editing, programming.
+- **[Paperclip](https://github.com/paperclipai/paperclip)** — open-source, free.
+- **[Guilde](https://guilde.work)** — closed-source SaaS, paid.
 
-## What you DO need to know
+## Cost expectation
 
-- **Which agency fits your business** — read the READMEs in [openagentik/companies](https://github.com/openagentik/companies) and pick one.
-- **What you want the agents to do for you** — write a list of 5-10 tasks before hiring help. Specific is better.
-- **Your LLM budget** — €20-200/mo is realistic depending on usage.
+LLM API: ~€20-200/month depending on usage. The engine itself is free (Paperclip) or a SaaS subscription (Guilde).
 
-## When you're stuck
+## Where to ask
 
-Open a discussion in [openagentik/.github](https://github.com/openagentik/.github/discussions) — non-coder questions get tagged and answered plainly.
+[openagentik discussions](https://github.com/openagentik/.github/discussions).
