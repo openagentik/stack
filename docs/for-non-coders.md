@@ -1,41 +1,38 @@
 # For non-coders
 
-If you've never opened a terminal and the words "git clone" make your eyes glaze, this page is for you.
+The stack is **runnable today by a developer**. A no-code path is planned but not ready yet. Here's what you can do without writing code:
 
-The stack is **designed to be runnable by a developer** today. We're working on a non-coder path (templates + a wizard CLI), but it's not ready yet.
+## 1. Browse what's there
 
-Here's what you can do **right now without coding**:
+Agencies are markdown files. You can read them on GitHub like a book, no install needed:
 
-## 1. Read the agencies
+- **[paperasse](https://github.com/openagentik/companies/tree/main/paperasse)** — French bureaucracy. Open `paperasse/README.md`, then `agents/` to see how an AI accountant, AI notary, and AI tax inspector are described.
+- **[ostack](https://github.com/openagentik/companies/tree/main/ostack)** — Software engineering. Open `ostack/agents/` for CEO, CTO, Designer, QA, Release roles.
+- **[awesome-agentik](https://github.com/openagentik/awesome-agentik)** — curated list across the whole ecosystem (other catalogs, runtimes, related specs).
 
-The agencies are markdown files. You can read them on GitHub like a book:
+If the structure makes sense to you on paper, you're ready for step 2.
 
-- **[paperasse](https://github.com/openagentik/companies/tree/main/paperasse)** — French bureaucracy. Open `paperasse/README.md` and the `agents/` folder to see how an AI accountant, AI notary, and AI tax inspector are described.
-- **[ostack](https://github.com/openagentik/companies/tree/main/ostack)** — Software engineering. Open `ostack/agents/` to see CEO, CTO, Designer, QA, Release roles.
+## 2. Hire a developer for a one-off setup
 
-If the structure makes sense to you, you're ready for step 2.
-
-## 2. Hire someone to set it up (one-off)
-
-A developer can clone an agency and wire it to a runtime in **2-3 hours**. That's a one-off €200-500 spend (Upwork, Malt, Fiverr Pro). After that, you operate the agency through the runtime's UI — no terminal needed.
+A developer can clone an agency and wire it to a runtime in about 2-3 hours. One-off €200-500 spend (Upwork, Malt, Fiverr Pro). After that, you operate the agency through your runtime's UI — no terminal needed.
 
 What the developer does:
+
 1. Clones [openagentik/companies](https://github.com/openagentik/companies)
 2. Picks the agency that fits you (paperasse, ostack, or a custom one)
 3. Installs a runtime ([Paperclip](https://github.com/paperclipai/paperclip) is open-source; Guilde is paid SaaS)
-4. Plugs in your LLM API key (Anthropic / OpenAI / Mistral / etc.)
+4. Plugs in your LLM API key (Anthropic / OpenAI / Mistral / …)
 5. Hands you the dashboard URL
+
+Brief them with: "Set up [agency name] from openagentik/companies on Paperclip with my Anthropic key. Show me how to operate it through the dashboard."
 
 ## 3. Wait for the wizard (Q3 2026)
 
-We're building [openagentik/cli](https://github.com/openagentik/cli) which will be: download, double-click, answer 3 questions, agency running. Watch that repo for releases.
+[openagentik/cli](https://github.com/openagentik/cli) will be: download, double-click, answer 3 questions, agency running. Watch that repo for releases.
 
 ## What you don't need to learn
 
-- Git
-- Terminal commands
-- Markdown editing (the developer or wizard handles edits)
-- Programming
+- Git, terminal commands, Markdown editing, programming.
 
 ## What you DO need to know
 
@@ -45,4 +42,4 @@ We're building [openagentik/cli](https://github.com/openagentik/cli) which will 
 
 ## When you're stuck
 
-Open an issue in [openagentik/.github](https://github.com/openagentik/.github/discussions) — we tag non-coder questions specifically and answer plainly.
+Open a discussion in [openagentik/.github](https://github.com/openagentik/.github/discussions) — non-coder questions get tagged and answered plainly.

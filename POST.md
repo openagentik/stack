@@ -1,83 +1,63 @@
 # Drop posts — drafts
 
-Ready-to-paste social copy for the launch drop. **All drafts. Tune voice before posting.**
+Ready-to-paste social copy for the launch. **Drafts.** Tone is curatorial, not promotional — we're announcing a branded home for open work people are already doing, with attribution upfront.
 
-Pick one channel per session — don't carpet-bomb. Sequence: X first (loudest signal), then LinkedIn (next morning), then HN Show (peak US morning), then IndieHackers / Reddit on a slow day later.
+Pick one channel per session. Suggested order: X first, LinkedIn next morning, HN Show on a peak US weekday, then IH/Reddit on a slow day.
 
 ---
 
 ## X / Twitter — main thread (EN)
 
-> 🧵 Solo founders deserve a real stack, not 8 ChatGPT tabs.
+> 🧵 A lot of brilliant open work is happening around AI agencies — specs, skills, runtimes, agency packages — across many separate repos and brands.
 >
-> Today I'm dropping the **openagentik stack** — open-source, forkable, every layer a real repo. No waitlist, no auth, no "join our Discord".
+> Today I'm putting it under one umbrella: **openagentik**. A branded home that curates and composes what others have been shipping.
 >
-> What's in it ↓
+> github.com/openagentik
 
 — —
 
-> The stack:
+> What openagentik *showcases* (other people's work):
 >
-> • Spec: agentagencies/v1
-> • Agencies: paperasse, ostack
-> • MCP runtime: coerce + connectors
-> • Templates, CLI, design system
-> • Bring your own engine (Paperclip / Guilde / yours)
->
-> Every box is a real repo with real code. No vapor.
+> • Paperclip's agentcompanies/v1 spec
+> • Anthropic's SKILL.md format
+> • agentskill.sh (Yuki Capital's 107k-skill index)
+> • paperasse (Romain Simon — FR bureaucracy)
+> • ostack ← gstack (mr-daedalium ← Garry Tan)
+> • designkit, canvakit, MCP
 
 — —
 
-> Two pre-built agencies ship today:
+> What openagentik *adds* (small, additive):
 >
-> 📎 **paperasse** — French bureaucracy AI team (compta, notariat, fiscal, copro). 6 agents. 6 SKILLs.
->
-> 🛠 **ostack** — Engineering team for Claude Code. 5 agents. 28 SKILLs.
->
-> Fork → run → ship. github.com/openagentik/companies
+> • agentagencies/v1 — a strict superset of agentcompanies/v1 that adds a runtime contract (authority matrix, approvals, resource ceilings)
+> • openagentik/companies — a catalog of pre-wrapped agencies (paperasse + ostack ship today)
+> • templates, MCP toolkit, CLI, awesome-list
 
 — —
 
-> Five principles we won't compromise on:
+> Everything's at github.com/openagentik. Spec at github.com/agencies-sh/spec.
 >
-> 1. Open standards, not products
-> 2. Forkable beats waitlisted
-> 3. Filesystem-first (your agency is a folder)
-> 4. Conservative authority (writes default to `ask`)
-> 5. Provenance always (every vendored skill carries repo + commit + license)
+> If you maintain something we're showcasing and want different framing — open an issue, we'll fix it the same day. Attribution-first is the rule.
 
 — —
 
-> Why open?
+> Thanks to everyone whose work this stands on. Submit yours to openagentik/awesome-agentik so others can find it.
 >
-> Closed AI ops platforms charge €200/mo for a dashboard you can't fork, an agent you can't inspect, and a runtime that runs in someone else's sandbox.
->
-> The AI-company stack should look like the rest of the modern web stack: open standards, composable libraries, you control the perimeter.
+> 🇫🇷 Lire en français : github.com/openagentik/stack/blob/main/README.fr.md
 
 — —
 
-> Built on the shoulders of:
->
-> @AnthropicAI's Skills format
-> @paperclipai's agentcompanies/v1 spec
-> @garrytan's gstack lineage (via @mr_daedalium's ostack)
-> @romainsimon's paperasse + agentskill.sh
->
-> Drop the stack: github.com/openagentik
-
-— —
-
-**Image to attach (TODO)**: clean diagram showing the layers. Use the ASCII version in [README.md](README.md) as the structure, render in Figma/Excalidraw.
+**Image to attach (TODO)**: clean diagram of the layers. Use the ASCII version in [README.md](README.md) as the structure, render in Figma/Excalidraw.
 
 ---
 
 ## X / Twitter — alt opener (FR)
 
-> 🇫🇷 Solo founders, on mérite un vrai stack — pas 8 onglets ChatGPT.
+> 🇫🇷 Beaucoup de travail open-source brillant existe sur les agences IA — specs, skills, runtimes, agences. Réparti sur des repos et marques séparés.
 >
-> Je drop aujourd'hui **openagentik** : le stack open-source pour faire tourner une agence IA. Chaque couche est un vrai repo, forkable depuis aujourd'hui.
+> Je le mets sous un même parapluie aujourd'hui : **openagentik**. Une maison brandée qui curate et compose ce que les autres shippent depuis des mois.
 >
-> 🧵
+> github.com/openagentik
 
 (continue mirroring the EN thread, see README.fr.md for tone)
 
@@ -85,37 +65,29 @@ Pick one channel per session — don't carpet-bomb. Sequence: X first (loudest s
 
 ## LinkedIn — long-form post (EN)
 
-**Headline**: *I just open-sourced the stack to run an AI agency.*
+**Headline**: *Putting the open agentic ecosystem under one branded umbrella.*
 
 **Body**:
 
-> Three months ago I was a solo founder running 8 ChatGPT tabs.
+> A lot of brilliant open work is happening around AI agencies right now — Paperclip's agentcompanies/v1 spec, Anthropic's SKILL.md format, Yuki Capital's agentskill.sh directory, Romain Simon's paperasse for French bureaucracy, Garry Tan's gstack lineage, mr-daedalium's ostack adaptation, MCP, designkit, canvakit, more.
 >
-> I'd open one for marketing, one for accounting, one for product specs. Each forgot the previous one. I'd copy-paste between them. I'd restart from scratch every Monday.
+> The problem isn't a lack of work. It's that the work lives in dozens of separate repos under separate brands. Hard to find, harder to compose.
 >
-> Today I dropped **openagentik** — the open-source stack for running an AI agency. Every layer is a real repo, every standard is documented, every reference implementation is forkable. No closed dashboards, no €200/mo SaaS accounts, no vendor lock-in.
+> Today I'm shipping **openagentik** — a branded home that curates and composes those pieces. Most of what's on the page is other people's work; we organize it. Where there's a real gap (a missing spec extension, a missing wrapper, a missing connector) we add small additive pieces.
 >
-> What ships today:
+> What openagentik authors:
 >
-> ▸ **agentagencies/v1** — the open spec (extends Paperclip's agentcompanies/v1)
-> ▸ **openagentik/companies** — pre-built agencies (paperasse for French bureaucracy, ostack for engineering teams)
-> ▸ Conservative authority defaults — writes/deploys/external messages always ask before executing
-> ▸ Filesystem-first — your agency is a folder you can read, version, fork, and take with you
+> ▸ **agentagencies/v1** — a strict superset of Paperclip's agentcompanies/v1 adding a runtime contract: heartbeat, authority matrix, approvals, resource ceilings.
+> ▸ **openagentik/companies** — a catalog of pre-wrapped agencies vendoring upstream skills with full provenance. Two ship today: paperasse and ostack.
+> ▸ Templates, MCP toolkit, CLI, awesome-list — the connective tissue.
 >
-> What's coming:
->
-> ▸ MCP toolkit (coerce pipeline + 4 connectors)
-> ▸ Templates for non-coders (solo-founder, agency, e-commerce starter packs)
-> ▸ A wizard CLI — `npx openagentik init`
->
-> If you've ever felt the friction of running your business on top of a vendor's closed AI dashboard, this is for you.
+> Everything's MIT (or CC-BY-4.0 for the spec). Issues open. PRs reviewed within two weeks. If you maintain something we're showcasing and want different framing, an issue gets a same-day fix.
 >
 > Repo: github.com/openagentik
 > Spec: github.com/agencies-sh/spec
+> Awesome list: github.com/openagentik/awesome-agentik
 >
-> Built on shoulders: Anthropic Skills, Paperclip's agentcompanies/v1, Garry Tan's gstack lineage, Romain Simon's paperasse.
->
-> 5 principles in the [README]. License MIT. PRs welcome — issue response within a week or call us out.
+> Thanks to everyone whose work this stands on.
 >
 > #AIAgents #OpenSource #SoloFounder #AICompany
 
@@ -123,104 +95,107 @@ Pick one channel per session — don't carpet-bomb. Sequence: X first (loudest s
 
 ## Hacker News — Show HN
 
-**Title**: `Show HN: openagentik – an open stack to run an AI agency`
+**Title**: `Show HN: openagentik – a branded home for the open agentic ecosystem`
 
 **Body**:
 
-> Hi HN — I built the openagentik stack as a way out of running my company on 8 ChatGPT tabs.
+> openagentik is a branded layer that curates and composes the open work people are already doing around AI agencies — specs, skills, runtimes, vertical content.
 >
-> What it is:
+> What we showcase (other people's work):
 >
-> • An open spec (agentagencies/v1) extending Paperclip's agentcompanies/v1 with a runtime contract — heartbeat, authority matrix, approvals, resource ceilings.
+> • Paperclip's agentcompanies/v1 spec — the portable agency manifest format
+> • Anthropic's SKILL.md format and MCP
+> • agentskill.sh (107k+ SKILLs indexed by Yuki Capital)
+> • paperasse (Romain Simon) — French bureaucracy SKILLs
+> • ostack ← gstack (mr-daedalium ← Garry Tan) — engineering workflow for Claude Code
+> • designkit, canvakit, Paperclip's runtime
 >
-> • A monorepo of pre-built agencies (openagentik/companies). Two ship today:
->     - paperasse: French bureaucracy AI team (6 agents, 6 SKILLs from romainsimon/paperasse)
->     - ostack: Software engineering team for Claude Code (5 agents, 28 SKILLs from mr-daedalium/ostack ← garrytan/gstack)
+> What we author (small, additive):
 >
-> • A zero-dep validator that checks every reference (assignee, project, dependsOn, manager, reportsTo, skills) resolves. Catches broken refs before they hit your runtime.
+> 1. **agentagencies/v1** — a strict superset of agentcompanies/v1 that adds a runtime contract: heartbeat, authority matrix per agent, approval routing, resource ceilings. Compatible with any agentcompanies/v1 runtime; an agentagencies/v1-aware runtime can also operate the package autonomously.
+>
+> 2. **openagentik/companies** — a catalog repo where each agency is a folder with full canonical layout. Skills are vendored from upstream with `metadata.sources` pinning repo + commit + license. Two ship today:
+>     - paperasse: 6 agents, 6 SKILLs (vendored from romainsimon/paperasse)
+>     - ostack: 5 agents, 28 SKILLs (vendored from mr-daedalium/ostack)
+>
+> 3. **A zero-dep validator** that checks every reference (assignee, project, dependsOn, manager, reportsTo, skills) resolves within an agency. Caught real bugs in our own wrappers.
+>
+> 4. **Templates, MCP toolkit, CLI** — placeholder repos with READMEs explaining what's coming. Most ship over Q3 2026.
 >
 > Design choices that may interest you:
 >
-> 1. Filesystem-first. An agency is a folder. No required databases, no telemetry, no external registries. Read it, fork it, copy it to a USB stick.
+> - **Filesystem-first.** An agency is a folder. No required databases, no telemetry, no registries.
+> - **Conservative authority.** AGENCY.md defaults every write/deploy/external-message action to `ask`. Autonomy is opt-in per agent per verb.
+> - **Provenance.** Every vendored SKILL carries metadata.sources. Sync upstream, see exactly what changed, decide whether to bump.
+> - **Engine-agnostic.** Run on Paperclip (open), Guilde (closed), or your own implementation.
 >
-> 2. Conservative authority. AGENCY.md defaults every write/deploy/external action to `ask`. Autonomy is opt-in per agent per verb. Production code doesn't need a yolo agent.
+> Repos:
 >
-> 3. Provenance. Every vendored SKILL carries metadata.sources with repo + commit + license. When upstream changes, you see what changed and decide whether to bump.
+> • github.com/openagentik
+> • github.com/agencies-sh/spec
 >
-> 4. Engine-agnostic. Run on Paperclip (open-source), Guilde (closed), or your own implementation. The spec is small enough to implement in a weekend.
->
-> What's not done yet:
->
-> • CLI wizard for non-coders (Q3 2026)
-> • MCP toolkit (coerce pipeline + 4 connectors — Notion, GitHub, +)
-> • More agencies in the catalog (currently 2)
->
-> License: MIT for code, CC-BY-4.0 for spec. Issues open. PRs welcome.
->
-> Drop: github.com/openagentik
-> Spec: github.com/agencies-sh/spec
->
-> Curious what you'd want in your version of an AI agency.
+> License: MIT for code, CC-BY-4.0 for spec. Issues open. Curious what's missing — what would you want to see in the catalog?
 
 ---
 
 ## IndieHackers — Show
 
-**Title**: I dropped an open-source stack to run an AI agency. Looking for feedback.
+**Title**: openagentik — putting the open agentic ecosystem under one branded umbrella
 
-**Body**:
-
-(Use the LinkedIn post but s/colleagues/fellow founders/ and lead with the personal frustration story longer. IH audience responds to first-person solo-founder narrative.)
+(Use the LinkedIn body, lighter on jargon. IH audience cares about the "what does this give me as an indie builder" — emphasize: **cataloged agencies you can fork today**, not vapor.)
 
 ---
 
 ## Reddit — r/SaaS, r/AI_Agents, r/selfhosted
 
-**Title**: `[Show] openagentik — an open-source stack to run an AI agency`
+**Title**: `[Show] openagentik — a curated home for open AI-agency work (specs, skills, agencies, tooling)`
 
-(Use the HN Show body. Reddit prefers technical depth + concrete examples over manifesto framing.)
+(Use the HN Show body. Reddit prefers technical depth + concrete examples + acknowledgements upfront.)
 
 ---
 
-## Email DM template — for Romain Simon, Garry Tan, paperclipai team, agentskill.sh, etc.
+## Email / DM template — Romain Simon, Garry Tan, paperclipai team, mr-daedalium, agentskill.sh, Anthropic
 
-**Subject (FR for Romain)**: `Forké paperasse en agentagencies/v1 — voulu te montrer avant le drop`
+**Subject (FR for Romain)**: `openagentik — paperasse est dedans, voulu te montrer avant le drop`
 
-**Subject (EN for others)**: `Built openagentik on top of your work — wanted to share before launching`
+**Subject (EN for others)**: `openagentik launches tomorrow — your work is in the foundation`
 
 **Body (template, customize per recipient)**:
 
 > Hi [Name],
 >
-> Big fan of [their project]. I've been building an open stack for solo-founder AI agencies, and your work is in the foundation:
+> Big fan of [their project]. I'm shipping a branded layer tomorrow called openagentik — a home for the open agentic ecosystem that curates and composes work like yours.
 >
-> [Specific reference: e.g., "ostack adapted from your gstack lineage", or "paperasse vendored as our first reference agency", or "we extend agentcompanies/v1 with a runtime contract"]
+> [Specific reference: e.g., "ostack is one of two pre-wrapped agencies we ship", or "we vendor paperasse SKILLs with full provenance and pinning", or "agentagencies/v1 extends your agentcompanies/v1 with a runtime contract"]
 >
-> I'm dropping it tomorrow at github.com/openagentik. Wanted to give you a heads-up before it hit X — happy to take last-minute corrections on attribution or framing if anything reads wrong.
+> Before it goes public — wanted to show you the pages that mention you so you can flag anything that reads wrong. Attribution-first is a hard rule; if any framing feels off, I'll fix it the same day.
 >
-> No ask. Just respect.
+> Repos: github.com/openagentik (org) and github.com/agencies-sh/spec.
+>
+> No ask. Just a heads-up out of respect.
 >
 > [Your name]
 
-(Tone is peer-to-peer, not promotional. Don't ask for a repost, don't ask for funding. Let the artifact speak.)
+(Tone is peer-to-peer, not promotional. Don't ask for a repost. Don't ask for funding. Let the artifact speak.)
 
 ---
 
 ## Sequencing checklist
 
 - [ ] Day -3: ship the diagram (Figma → SVG in repo)
-- [ ] Day -2: send DMs to Romain Simon, Garry Tan, mr-daedalium, paperclipai team. 24-hour heads-up.
-- [ ] Day -1: final scrub of all repos. Check every link in the BOM resolves.
+- [ ] Day -2: send DMs to Romain Simon, Garry Tan, mr-daedalium, paperclipai team. 24-hour heads-up with the actual page they're mentioned on.
+- [ ] Day -1: final scrub of all repos. Every link in the BOM resolves. Every attribution is correct.
 - [ ] Day 0, 9am Paris (3am ET): X thread (FR + EN)
 - [ ] Day 0, 10am Paris (4am ET): LinkedIn post
 - [ ] Day 0, 4pm Paris (10am ET, peak US morning): HN Show
 - [ ] Day +1: IndieHackers + r/SaaS
 - [ ] Day +3: r/AI_Agents + r/selfhosted (after early traction settles)
-- [ ] Day +7: write a Board Review-style retrospective post on what worked
+- [ ] Day +7: write a retrospective post on what worked and what didn't
 
 ## Anti-patterns
 
-- ❌ Don't tag Romain Simon AND criticize win.sh in the same post. Pick one.
-- ❌ Don't say "Paperclip is too closed" — it's open-source. Distinguish on different axes.
-- ❌ Don't promise the CLI / templates if they don't exist by drop day. Cut them from the BOM if not ready.
+- ❌ Don't claim to compete with anyone listed on the page. Curatorial framing only.
+- ❌ Don't pitch openagentik as a product. It's a brand for showcasing.
+- ❌ Don't promise the CLI / templates / mcp packages if their repos are empty. Cut them from the BOM if not ready.
 - ❌ Don't drop on a Friday afternoon (US) or weekend (FR). Tue/Wed AM is the sweet spot.
+- ❌ Don't bury attribution. Lead with it. The whole point is celebrating brilliant open work.

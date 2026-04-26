@@ -1,164 +1,138 @@
 # The openagentik stack
 
-> **The open stack to run an AI agency.**
-> Solo founders deserve a real stack, not 8 ChatGPT tabs.
+> A branded home for the open agentic ecosystem.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Spec: agentagencies/v1](https://img.shields.io/badge/spec-agentagencies%2Fv1-blue)](https://github.com/agencies-sh/spec)
-[![Open](https://img.shields.io/badge/everything-open-brightgreen.svg)](#why-open)
 [🇫🇷 Lire en français](README.fr.md)
 
 ---
 
-## The problem
+A lot of brilliant, open work is happening around AI agencies right now — specs, skills, runtimes, design systems, vertical content. Most of it lives in separate repos under separate brands. **openagentik** is the branded layer that puts those pieces under one umbrella, makes them composable, and gives them a home where solo founders, indie agencies, and operators can find and reuse them.
 
-You don't run a company. You run **8 ChatGPT tabs**. You copy-paste between them. You forget which one was your CEO and which one was your accountant. You restart from scratch every Monday because nothing remembers anything.
+We don't author most of this work. We curate it, compose it, and where there's a gap (a missing spec extension, a missing wrapper, a missing connector) we add it.
 
-There are vendors selling closed-source "AI ops dashboards" priced at €200/mo — but you can't see what's running, you can't fork it, you can't take it with you when you leave. They want you on their rails.
+---
 
-That's not a stack. That's a SaaS account.
+## What we showcase
 
-A real stack is **forkable, opinionated, composable, and yours**.
+Other people's brilliant work, organized so it's discoverable and composable:
 
-## What we built
+| Layer | Open initiative | Maintained by |
+|---|---|---|
+| **Spec (base)** | [agentcompanies/v1](https://agentcompanies.io) | [Paperclip](https://github.com/paperclipai) |
+| **Skills format** | [Anthropic Skills (SKILL.md)](https://github.com/agentskills/agentskills) | Anthropic + community |
+| **Skills directory** | [agentskill.sh](https://agentskill.sh) (107k+ skills indexed) | [Yuki Capital](https://yukicapital.com) |
+| **Engine** | [Paperclip](https://github.com/paperclipai/paperclip) (open-source agentcompanies/v1 runtime) | Paperclip team |
+| **Vertical content** | [paperasse](https://github.com/romainsimon/paperasse) (FR bureaucracy SKILLs) | [Romain Simon](https://github.com/romainsimon) |
+| **Engineering workflow** | [ostack](https://github.com/mr-daedalium/ostack) (← [gstack](https://github.com/garrytan/gstack)) | [mr-daedalium](https://github.com/mr-daedalium) ← [Garry Tan](https://github.com/garrytan) |
+| **Design system standard** | [designkit](https://github.com/designkit-sh) | designkit-sh |
+| **Template / data-source standard** | [canvakit](https://github.com/canvakit) | canvakit |
+| **MCP** | [Model Context Protocol](https://modelcontextprotocol.io) | Anthropic + community |
+
+The full bill of materials lives in [STACK.md](STACK.md).
+
+## What we author
+
+A small set of pieces that fill gaps in the ecosystem:
+
+| Repo | What it does |
+|---|---|
+| [`agencies-sh/spec`](https://github.com/agencies-sh/spec) | **agentagencies/v1** — a strict superset of agentcompanies/v1 adding a runtime contract (heartbeat, authority matrix, approvals, resource ceilings). |
+| [`openagentik/companies`](https://github.com/openagentik/companies) | A catalog of pre-wrapped agencies. Vendors upstream skills, adds the canonical manifest layer. Today: **paperasse** + **ostack**. |
+| [`openagentik/templates`](https://github.com/openagentik/templates) | Starter agency shapes (solo-founder, small-team, minimal) for people who want to build their own. |
+| [`openagentik/mcp`](https://github.com/openagentik/mcp) | MCP toolkit — coerce pipeline + connector packages. |
+| [`openagentik/cli`](https://github.com/openagentik/cli) | `npx openagentik init / add / run` — orchestrator wizard. |
+| [`openagentik/awesome-agentik`](https://github.com/openagentik/awesome-agentik) | Curated list of agencies, runtimes, skills, and tooling across the whole ecosystem. |
+
+## How the pieces fit
 
 ```
-                    THE OPENAGENTIK STACK
+                      THE OPENAGENTIK STACK
 
   ┌─────────────────────────────────────────────────────────────┐
   │                          SPEC                                │
-  │            agentagencies/v1   (extends agentcompanies/v1)    │
-  │                  →  agencies-sh/spec                         │
+  │     agentagencies/v1 (extends agentcompanies/v1)             │
+  │                  → agencies-sh/spec                          │
   └─────────────────────────────────────────────────────────────┘
   ┌─────────────────────────────────────────────────────────────┐
   │                       AGENCIES                               │
-  │   pre-built, fork-ready agency packages — 1 PR = 1 entry     │
-  │                  →  openagentik/companies                    │
-  │   • paperasse (FR bureaucracy — 6 agents, 6 skills)         │
-  │   • ostack (engineering — 5 agents, 28 skills)              │
+  │       pre-wrapped, fork-ready agency packages                │
+  │                  → openagentik/companies                     │
+  │   • paperasse (FR bureaucracy — 6 agents, 6 skills)          │
+  │   • ostack (engineering — 5 agents, 28 skills)               │
   │   • _your agency here_                                       │
   └─────────────────────────────────────────────────────────────┘
   ┌────────────────┬─────────────────┬──────────────────────────┐
   │   MCP RUNTIME  │   DESIGN        │   TEMPLATES              │
-  │   coerce +     │   designkit.sh  │   solo-founder, agency,  │
-  │   connectors   │   canvakit.sh   │   ecommerce starter packs│
+  │   coerce +     │   designkit.sh  │   solo-founder, small-   │
+  │   connectors   │   canvakit.sh   │   team, minimal          │
   │                │                 │                          │
-  │ →openagentik/mcp│ →designkit-sh   │ →openagentik/templates   │
+  │ →openagentik/mcp│ →designkit-sh   │ →openagentik/templates  │
   └────────────────┴─────────────────┴──────────────────────────┘
   ┌─────────────────────────────────────────────────────────────┐
   │                          CLI                                 │
   │              npx openagentik init / add / run                │
-  │                   →  openagentik/cli                         │
+  │                   → openagentik/cli                          │
   └─────────────────────────────────────────────────────────────┘
   ┌─────────────────────────────────────────────────────────────┐
   │                    ENGINE (your choice)                      │
-  │   Paperclip   ·   Guilde   ·   your own agentagencies/v1     │
+  │    Paperclip   ·   Guilde   ·   any agentagencies/v1         │
   │                          runtime                             │
   └─────────────────────────────────────────────────────────────┘
 ```
 
-Every box is **a real repo, with real code, that you can fork today**. No waitlist. No "join our Discord". No demo gating.
+Every box is a real repo. Most boxes are someone else's brilliant work. Where there's something we author, it's small and additive.
 
-## Bill of materials
+## How to use openagentik
 
-| Layer | Standard | Reference Implementation |
-|---|---|---|
-| **Spec** | [agentagencies/v1](https://github.com/agencies-sh/spec) (extends [agentcompanies/v1](https://agentcompanies.io)) | — |
-| **Agencies** | — | [openagentik/companies](https://github.com/openagentik/companies) |
-| **Skills** | [Anthropic Skills](https://github.com/agentskills/agentskills) | catalog at [agentskill.sh](https://agentskill.sh) |
-| **MCP runtime** | [Model Context Protocol](https://modelcontextprotocol.io) | [openagentik/mcp](https://github.com/openagentik/mcp) |
-| **Design system** | [designkit](https://github.com/designkit-sh) | [designkit.sh](https://designkit.sh) |
-| **Templates** | [canvakit](https://github.com/canvakit) | [canvakit.sh](https://canvakit.sh) |
-| **Starter packs** | — | [openagentik/templates](https://github.com/openagentik/templates) |
-| **CLI** | — | [openagentik/cli](https://github.com/openagentik/cli) |
-| **Engine** | agentagencies/v1 runtime | [Paperclip](https://github.com/paperclipai/paperclip), Guilde, your own |
+You can engage with the stack at whatever level fits you:
 
-Detailed BOM: [STACK.md](STACK.md).
-
----
-
-## Five principles
-
-1. **Open standards, not products.** The spec ([agentagencies/v1](https://github.com/agencies-sh/spec)) is vendor-neutral. Anyone can implement a runtime. We don't own it. No one does.
-
-2. **Forkable beats waitlisted.** Every repo accepts PRs. Every issue gets a response within a week. If we ever drop that bar, call us out.
-
-3. **Filesystem-first.** Your agency is a folder. Read it, edit it, version it in git, copy it to a USB stick. No required databases, no external registries, no runtime telemetry.
-
-4. **Conservative authority.** [`AGENCY.md`](https://github.com/agencies-sh/spec/blob/main/v1/01-AGENCY.md) defaults every write/deploy/external action to `ask`. Autonomy is opt-in, per agent, per verb. Production code doesn't need a yolo agent.
-
-5. **Provenance always.** Every vendored skill carries `metadata.sources` with repo + commit + license. When upstream changes, you see exactly what changed and decide whether to bump.
-
----
-
-## Three ways to start
-
-### 1. Clone an agency, run it tonight
-
-```bash
-git clone https://github.com/openagentik/companies
-cd companies/paperasse  # or ostack
-# Drop into a Paperclip / Guilde / your own runtime
-```
-
-The catalog is fork-and-run. Two agencies ship today (paperasse, ostack); more land every month via PRs.
-
-### 2. Build your own agency
-
-Pick a starter from [openagentik/templates](https://github.com/openagentik/templates) (solo-founder, agency, ecommerce), edit the manifests, vendor your skills, validate:
-
-```bash
-node scripts/validate-agentcompanies.js my-agency
-# ✓ all references resolve
-```
-
-Submit a PR to [openagentik/companies](https://github.com/openagentik/companies/blob/main/CONTRIBUTING.md) when you're ready to share it.
-
-### 3. Build the engine
-
-The spec is small and stable. Implementing a runtime is a weekend project for a strong engineer. Reference implementations: [Paperclip](https://github.com/paperclipai/paperclip), and Guilde (closed-source, but spec-compliant).
-
----
-
-## Why open
-
-Closed AI ops platforms charge €200/mo for a dashboard you can't fork, an agent you can't inspect, and a runtime that runs in someone else's sandbox. They sell you a SaaS account and call it a "team".
-
-That works for some people. Not for solo founders building serious businesses.
-
-We think the AI-company stack should look like the rest of the modern web stack: opinionated open standards (HTTP, OAuth, OpenAPI), composable open libraries (React, Postgres, Tailwind), and **you control the perimeter**.
-
-So we built it. Every layer. Every repo public from day one.
-
----
-
-## What's stable, what's not
-
-| | Status |
+| You want to… | Start here |
 |---|---|
-| Spec (`agentagencies/v1`) | **v1-draft.** Field names stabilizing. Breaking changes will be flagged in CHANGELOG. |
-| Catalog (`openagentik/companies`) | **Stable layout.** New agencies land via PR. |
-| Validator | **Stable.** Zero deps, runs on any Node ≥18. |
-| MCP toolkit | **In progress.** Coerce pipeline first, connectors next. |
-| Templates / CLI | **Coming Q3 2026.** |
+| Run an existing agency | [openagentik/companies](https://github.com/openagentik/companies) — fork a folder, drop into a runtime |
+| Build your own agency | [openagentik/templates](https://github.com/openagentik/templates) — pick a shape, fill in `<EDIT_ME>` |
+| Read the spec | [agencies-sh/spec](https://github.com/agencies-sh/spec) |
+| Find a skill / connector | [agentskill.sh](https://agentskill.sh) and [openagentik/mcp](https://github.com/openagentik/mcp) |
+| Browse the whole ecosystem | [openagentik/awesome-agentik](https://github.com/openagentik/awesome-agentik) |
+| Submit your own work | Catalog: [openagentik/companies/CONTRIBUTING.md](https://github.com/openagentik/companies/blob/main/CONTRIBUTING.md) · Awesome list: [openagentik/awesome-agentik](https://github.com/openagentik/awesome-agentik#contributing) · Spec: [agencies-sh/spec/issues](https://github.com/agencies-sh/spec/issues) |
+
+## How we curate
+
+A few things we hold ourselves to:
+
+- **Attribution first.** Every vendored asset carries `metadata.sources` with repo + commit + license. When upstream evolves, you see what changed.
+- **Filesystem-first.** Agencies are folders. Read them, version them, copy them. No required databases, no telemetry, no registries.
+- **Strict superset.** agentagencies/v1 never breaks agentcompanies/v1. If we ever need to, we'll do it via a new major version with a migration path.
+- **Open responsiveness.** Issues get a reply within a week. PRs reviewed within two. If we drop that bar, call us out.
+- **Engine-agnostic.** We don't ship a runtime. We help you pick one (Paperclip, Guilde, your own) and move agencies between them.
+
+## What we author vs what we showcase
+
+| | We author | We showcase |
+|---|---|---|
+| Standard | agentagencies/v1 (extends Paperclip's agentcompanies/v1) | agentcompanies/v1, SKILL.md |
+| Code | mcp toolkit, cli, validator | Paperclip, agent frameworks, MCP, runtimes |
+| Content | catalog wrappers, templates | upstream skills (paperasse, ostack, …) |
+| Sites | this stack page | designkit.sh, canvakit.sh, agentskill.sh |
+
+When in doubt, we'd rather link to someone else's brilliant work than rebuild it.
 
 ---
 
 ## Acknowledgements
 
-This stack stands on the shoulders of:
-- [Anthropic Skills](https://github.com/agentskills/agentskills) — the SKILL.md format we honor without redefining.
-- [Paperclip](https://github.com/paperclipai/paperclip) — the agentcompanies/v1 spec we extend.
-- [Garry Tan](https://github.com/garrytan) — gstack started this whole genre.
-- [mr-daedalium](https://github.com/mr-daedalium) — ostack adapted gstack for Claude Code.
-- [Romain Simon](https://github.com/romainsimon) — paperasse, agentskill.sh, the French AI ecosystem.
+This stack would be vapor without:
 
----
+- **[Anthropic](https://www.anthropic.com)** — Claude, the SKILL.md format, the Model Context Protocol.
+- **[Paperclip](https://github.com/paperclipai)** — agentcompanies/v1, the catalog pattern (`paperclipai/companies`), and the open-source runtime.
+- **[Garry Tan](https://github.com/garrytan)** — gstack started this whole genre.
+- **[mr-daedalium](https://github.com/mr-daedalium)** — ostack adapted gstack for Claude Code workflows.
+- **[Romain Simon](https://github.com/romainsimon) / [Yuki Capital](https://yukicapital.com)** — paperasse, agentskill.sh, the French AI ecosystem.
+- **everyone shipping skills, runtimes, and agency packages on GitHub.** Submit yours to [awesome-agentik](https://github.com/openagentik/awesome-agentik) so others can find it.
+
+If you maintain something we're showcasing and want a different framing — open an issue, we'll fix it the same day.
 
 ## License
 
-MIT for code. CC-BY-4.0 for the spec. Each vendored asset keeps its upstream license — see each repo's `.upstream.yaml` for details.
-
----
-
-*Stewarded by the openagentik community. Drop the stack: `https://github.com/openagentik`.*
+Code: MIT. Spec: CC-BY-4.0. Each vendored asset keeps its upstream license — see each repo's `.upstream.yaml`.

@@ -1,54 +1,49 @@
 # For solo founders
 
-You're running a SaaS, a content business, an agency, or a small e-commerce. You wear 10 hats. You've tried 4 AI tools and ended up using ChatGPT in the same browser tab as everything else.
+Most of the openagentik stack is **other people's open work** — Paperclip's spec, Anthropic's SKILL.md format, agentskill.sh's directory, paperasse's SKILLs, ostack's engineering workflow. We curate and compose it. Here's how to engage as a solo founder.
 
-This stack is for you.
+## Pick the entry point that matches you
 
-## What changes when you adopt it
+### "I want to run an agency tonight"
 
-| Before | After |
-|---|---|
-| 8 ChatGPT tabs, each forgetting the previous | One agency manifest in a folder. Persistent. |
-| Copy-paste between conversations | Agents talk to each other in their own runtime |
-| €200/mo to a closed dashboard | €0 + your LLM API costs |
-| "What was that prompt I used last week?" | Skills are versioned files |
-| "Did the agent actually run that, or imagine it?" | Every action is logged. Every approval is tracked. |
-| Vendor decides what your "CEO agent" can do | You decide. In `AGENCY.md`. Per agent. Per verb. |
+Fork an agency from [openagentik/companies](https://github.com/openagentik/companies) and drop it into a runtime.
 
-## Where to start
+- **[paperasse](https://github.com/openagentik/companies/tree/main/paperasse)** — French bureaucracy: comptable, CAC, contrôleur fiscal, fiscaliste, notaire, syndic. Vendored from [romainsimon/paperasse](https://github.com/romainsimon/paperasse).
+- **[ostack](https://github.com/openagentik/companies/tree/main/ostack)** — Engineering team for Claude Code: CEO, CTO, Designer, QA, Release. Vendored from [mr-daedalium/ostack](https://github.com/mr-daedalium/ostack) ← [garrytan/gstack](https://github.com/garrytan/gstack).
 
-You're probably one of these three people. Start with the one that matches:
+Each is a folder. Clone, validate, hand to a runtime ([Paperclip](https://github.com/paperclipai/paperclip), Guilde, or your own).
 
-### "I run a French SaaS / e-commerce / consulting practice"
+### "I want to build my own"
 
-→ [paperasse](https://github.com/openagentik/companies/tree/main/paperasse) covers your back-office: comptable, CAC, contrôle fiscal, fiscaliste, notaire, syndic. Six agents, real workflows.
+Start from [openagentik/templates](https://github.com/openagentik/templates) — `solo-founder`, `small-team`, or `minimal`. Replace `<EDIT_ME>` markers, vendor your own skills, validate, run.
 
-### "I'm a developer building products"
+### "I want to read the spec first"
 
-→ [ostack](https://github.com/openagentik/companies/tree/main/ostack) covers your engineering org: CEO (vision), CTO (architecture + review), Designer, QA Engineer (real-browser), Release Engineer (ship + deploy). Five agents, 28 SKILLs.
+[agencies-sh/spec](https://github.com/agencies-sh/spec) — agentagencies/v1 in ~10 markdown files. Extends [agentcompanies/v1](https://agentcompanies.io) (Paperclip).
 
-### "I want something custom"
+### "I want to browse what others have built"
 
-→ Start from a [template](https://github.com/openagentik/templates) (coming Q3 2026), or fork one of the above and edit the `agents/` folder. The validator catches broken refs before you waste time.
+[openagentik/awesome-agentik](https://github.com/openagentik/awesome-agentik) — curated list of agencies, runtimes, skill directories, tooling, related specs.
 
-## What this won't do for you
+## What this stack assumes about you
 
-- It won't write your value prop. That's still on you.
-- It won't replace human judgement on hiring, pricing, or strategy.
-- It won't reduce your LLM bill (but you pick the LLM, not us).
-- It won't run if you don't pick an engine. Reference engines listed in [STACK.md](../STACK.md).
+- You're comfortable cloning a git repo and reading markdown.
+- You'll pick a runtime (Paperclip is open and works today; Guilde is paid SaaS; you can also build your own).
+- You'll pay for an LLM API (Anthropic, OpenAI, Mistral, etc.). The stack is provider-agnostic — your engine handles the choice.
 
-## Time to first value
+## What this stack doesn't promise
 
-| Activity | Time |
-|---|---|
-| Clone an agency | 30 seconds |
-| Validate it | 5 seconds |
-| Drop into a runtime | depends on the runtime — Paperclip says ~2 min |
-| First agent reply | depends on your LLM API setup |
+- A no-code wizard today. The CLI ([openagentik/cli](https://github.com/openagentik/cli)) is planned for Q3 2026. Until then, expect to clone + edit files manually or hire a developer for ~2-3 hours of one-off setup.
+- A hosted dashboard. The stack is filesystem-first — agencies live in folders, you run them in your engine of choice.
+- Plug-and-play with closed AI ops platforms. Most operate in their own sandbox; an open stack lives outside it.
 
-Total realistic: **30 minutes to first agent action**, assuming you have an LLM API key and a runtime installed.
+## When you outgrow a piece
 
-## When you outgrow it
+Every layer is swappable:
 
-The stack is a stack — you can swap layers. If openagentik/companies doesn't fit, fork to your own repo. If the validator is too strict, write your own. If the engine is wrong, change engines without changing the agency. **Nothing is locked in.**
+- The catalog doesn't fit? Fork to your own repo.
+- The validator is too strict? Write your own — it's ~150 LOC.
+- The engine is wrong? Move the agency folder to a different engine.
+- The spec missed something? Open an issue at [agencies-sh/spec](https://github.com/agencies-sh/spec/issues).
+
+Nothing is locked in. That's the point.

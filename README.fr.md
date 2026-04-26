@@ -1,7 +1,6 @@
 # Le stack openagentik
 
-> **Le stack open-source pour faire tourner une agence IA.**
-> Les solo founders méritent un vrai stack, pas 8 onglets ChatGPT.
+> Une maison brandée pour l'écosystème agentic open-source.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Spec: agentagencies/v1](https://img.shields.io/badge/spec-agentagencies%2Fv1-blue)](https://github.com/agencies-sh/spec)
@@ -9,68 +8,72 @@
 
 ---
 
-## Le problème
+Beaucoup de travail open-source brillant se passe autour des agences IA en ce moment — specs, skills, runtimes, design systems, contenu vertical. La plupart vit dans des repos séparés sous des marques séparées. **openagentik** est la couche brandée qui met ces pièces sous un même parapluie, les rend composables, et leur donne une maison où les solo founders, agences indie et opérateurs peuvent les trouver et les réutiliser.
 
-Tu ne fais pas tourner une boîte. Tu fais tourner **8 onglets ChatGPT**. Tu copies-colles entre les onglets. Tu oublies lequel était ton CEO et lequel ton comptable. Tu repars de zéro chaque lundi parce que rien ne se souvient de rien.
+On n'écrit pas la plupart de ce travail. On le **curate**, on le compose, et là où il y a un trou (extension de spec manquante, wrapper manquant, connecteur manquant) on l'ajoute.
 
-Il y a des vendeurs qui te facturent 200 €/mois pour un "dashboard d'ops IA" fermé — mais tu ne vois pas ce qui tourne, tu ne peux pas forker, tu ne peux pas l'emporter quand tu pars. Ils veulent te garder sur leurs rails.
+## Ce qu'on showcase
 
-Ce n'est pas un stack. C'est un compte SaaS.
+Le travail brillant des autres, organisé pour qu'il soit découvrable et composable :
 
-Un vrai stack est **forkable, opinioné, composable, et à toi**.
+- **agentcompanies/v1** ([Paperclip](https://github.com/paperclipai)) — la spec de base.
+- **Anthropic Skills** ([SKILL.md](https://github.com/agentskills/agentskills)) — le format de capacités.
+- **agentskill.sh** ([Yuki Capital](https://yukicapital.com)) — l'index de 107k+ skills.
+- **Paperclip** — le runtime open-source de référence.
+- **paperasse** ([Romain Simon](https://github.com/romainsimon)) — skills FR (compta, fiscal, notariat).
+- **ostack / gstack** ([mr-daedalium](https://github.com/mr-daedalium) ← [Garry Tan](https://github.com/garrytan)) — workflow d'ingénierie pour Claude Code.
+- **designkit** + **canvakit** — standards design system + templates.
+- **Model Context Protocol** — protocole d'outils.
 
-## Ce qu'on a construit
+Liste complète + diagramme dans le [README anglais](README.md#what-we-showcase).
 
-Voir le diagramme et la **bill of materials** dans le [README anglais](README.md#what-we-built).
+## Ce qu'on écrit
 
-Chaque case est **un vrai repo, avec du vrai code, que tu peux forker aujourd'hui**. Pas de liste d'attente. Pas de "rejoins notre Discord". Pas de demo bridée.
+Un petit ensemble de pièces qui comblent des trous :
 
-## Cinq principes
+- **[agencies-sh/spec](https://github.com/agencies-sh/spec)** — agentagencies/v1, superset strict de agentcompanies/v1 ajoutant un contrat runtime (heartbeat, matrice d'autorité, approbations, plafonds de ressources).
+- **[openagentik/companies](https://github.com/openagentik/companies)** — catalogue d'agences pré-wrappées. Vendors les skills upstream, ajoute la couche manifeste canonique. Aujourd'hui : paperasse + ostack.
+- **[openagentik/templates](https://github.com/openagentik/templates)** — formes de départ (solo-founder, small-team, minimal).
+- **[openagentik/mcp](https://github.com/openagentik/mcp)** — toolkit MCP : pipeline coerce + connecteurs.
+- **[openagentik/cli](https://github.com/openagentik/cli)** — `npx openagentik init / add / run`.
+- **[openagentik/awesome-agentik](https://github.com/openagentik/awesome-agentik)** — liste curée de tout l'écosystème.
 
-1. **Standards ouverts, pas produits.** La spec ([agentagencies/v1](https://github.com/agencies-sh/spec)) est vendor-neutral. N'importe qui peut implémenter un runtime. On ne la possède pas. Personne ne la possède.
+## Comment utiliser openagentik
 
-2. **Forkable plutôt que liste d'attente.** Chaque repo accepte les PR. Chaque issue reçoit une réponse en moins d'une semaine. Si on lâche cette barre, dénonce-nous.
+Tu peux entrer dans le stack au niveau qui te convient :
 
-3. **Filesystem-first.** Ton agence est un dossier. Tu le lis, tu l'édites, tu le versionnes dans git, tu le copies sur une clé USB. Pas de base de données obligatoire, pas de registre externe, pas de télémétrie runtime.
+| Ce que tu veux faire | Commence ici |
+|---|---|
+| Faire tourner une agence existante | [openagentik/companies](https://github.com/openagentik/companies) |
+| Construire la tienne | [openagentik/templates](https://github.com/openagentik/templates) |
+| Lire la spec | [agencies-sh/spec](https://github.com/agencies-sh/spec) |
+| Trouver un skill / connecteur | [agentskill.sh](https://agentskill.sh), [openagentik/mcp](https://github.com/openagentik/mcp) |
+| Parcourir l'écosystème | [openagentik/awesome-agentik](https://github.com/openagentik/awesome-agentik) |
+| Soumettre ton travail | [openagentik/companies/CONTRIBUTING.md](https://github.com/openagentik/companies/blob/main/CONTRIBUTING.md) |
 
-4. **Autorité conservatrice.** [`AGENCY.md`](https://github.com/agencies-sh/spec/blob/main/v1/01-AGENCY.md) met par défaut chaque action write/deploy/externe sur `ask`. L'autonomie est opt-in, par agent, par verbe. Le code en prod n'a pas besoin d'un agent yolo.
+## Comment on curate
 
-5. **Provenance toujours.** Chaque skill vendoré porte `metadata.sources` avec repo + commit + licence. Quand l'amont change, tu vois exactement ce qui a changé et tu décides si tu bumpes.
+Quelques engagements :
 
-## Trois façons de commencer
+- **Attribution d'abord.** Chaque asset vendoré porte `metadata.sources` avec repo + commit + licence.
+- **Filesystem-first.** Une agence est un dossier. Lisible, versionnable, copiable. Pas de DB obligatoire, pas de télémétrie.
+- **Superset strict.** agentagencies/v1 ne casse jamais agentcompanies/v1.
+- **Réactivité ouverte.** Réponse aux issues sous une semaine, PR review sous deux. Si on lâche, dénonce-nous.
+- **Engine-agnostic.** Pas de runtime maison. On t'aide à en choisir un et à bouger tes agences entre eux.
 
-### 1. Cloner une agence, la faire tourner ce soir
+## Reconnaissances
 
-```bash
-git clone https://github.com/openagentik/companies
-cd companies/paperasse  # ou ostack
-# Drop dans un runtime Paperclip / Guilde / le tien
-```
+Ce stack serait vapeur sans :
 
-### 2. Construire ta propre agence
+- **[Anthropic](https://www.anthropic.com)** — Claude, format SKILL.md, MCP.
+- **[Paperclip](https://github.com/paperclipai)** — agentcompanies/v1, le pattern catalogue, le runtime open-source.
+- **[Garry Tan](https://github.com/garrytan)** — gstack a lancé tout ce genre.
+- **[mr-daedalium](https://github.com/mr-daedalium)** — ostack adapté pour Claude Code.
+- **[Romain Simon](https://github.com/romainsimon) / [Yuki Capital](https://yukicapital.com)** — paperasse, agentskill.sh, l'écosystème IA français.
+- **toute personne qui ship des skills, runtimes, agences sur GitHub.** Soumets tes choses à [awesome-agentik](https://github.com/openagentik/awesome-agentik).
 
-Pars d'un starter dans [openagentik/templates](https://github.com/openagentik/templates), édite les manifests, vendore tes skills, valide. Submit une PR à [openagentik/companies](https://github.com/openagentik/companies) quand c'est prêt.
-
-### 3. Construire le moteur
-
-La spec est petite et stable. Implémenter un runtime, c'est un projet weekend pour un bon dev. Implémentations de référence : [Paperclip](https://github.com/paperclipai/paperclip), et Guilde (closed-source, mais conforme à la spec).
-
-## Pourquoi open
-
-Les plateformes d'ops IA fermées te facturent 200 €/mois pour un dashboard que tu ne peux pas forker, un agent que tu ne peux pas inspecter, et un runtime qui tourne dans le sandbox de quelqu'un d'autre. Elles te vendent un compte SaaS et appellent ça une "équipe".
-
-Ça marche pour certaines personnes. Pas pour les solo founders qui montent des boîtes sérieuses.
-
-On pense que le stack d'agence IA devrait ressembler au reste du stack web moderne : standards ouverts opinionés (HTTP, OAuth, OpenAPI), librairies open composables (React, Postgres, Tailwind), et **tu contrôles le périmètre**.
-
-Donc on l'a construit. Chaque couche. Chaque repo public depuis le jour 1.
-
----
+Si tu maintiens quelque chose qu'on showcase et que tu veux un autre framing — ouvre une issue, on corrige le jour même.
 
 ## Licence
 
-MIT pour le code. CC-BY-4.0 pour la spec. Chaque asset vendoré garde sa licence amont — voir le `.upstream.yaml` de chaque repo.
-
----
-
-*Stewarded par la communauté openagentik. Drop le stack : `https://github.com/openagentik`.*
+Code : MIT. Spec : CC-BY-4.0. Chaque asset vendoré garde sa licence amont — voir le `.upstream.yaml` de chaque repo.
