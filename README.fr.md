@@ -1,79 +1,57 @@
-# Le stack openagentik
+# openagentik
 
-> Une maison brandée pour l'écosystème agentic open-source.
+Une curation de standards et ressources open-source pour agences IA.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Spec: agentagencies/v1](https://img.shields.io/badge/spec-agentagencies%2Fv1-blue)](https://github.com/agencies-sh/spec)
-[🇬🇧 Read in English](README.md)
+[🇬🇧 README.md](README.md)
 
----
+## Standards
 
-Beaucoup de travail open-source brillant se passe autour des agences IA en ce moment — specs, skills, runtimes, design systems, contenu vertical. La plupart vit dans des repos séparés sous des marques séparées. **openagentik** est la couche brandée qui met ces pièces sous un même parapluie, les rend composables, et leur donne une maison où les solo founders, agences indie et opérateurs peuvent les trouver et les réutiliser.
+- **[agentcompanies/v1](https://agentcompanies.io)** — manifeste portable d'agent-company. Par [Paperclip](https://github.com/paperclipai).
+- **[agentagencies/v1](https://github.com/agencies-sh/spec)** — superset strict d'agentcompanies/v1 ajoutant un contrat runtime (heartbeat, matrice d'autorité, approbations, plafonds de ressources). Écrit ici.
+- **[SKILL.md](https://github.com/agentskills/agentskills)** — format de package de capacité. Par Anthropic + communauté.
+- **[Model Context Protocol](https://modelcontextprotocol.io)** — protocole d'outils. Par Anthropic + communauté.
+- **[designkit](https://github.com/designkit-sh)** — standard de registre DESIGN.md.
+- **[canvakit](https://github.com/canvakit)** — standard template + data-source.
 
-On n'écrit pas la plupart de ce travail. On le **curate**, on le compose, et là où il y a un trou (extension de spec manquante, wrapper manquant, connecteur manquant) on l'ajoute.
+## Outils
 
-## Ce qu'on showcase
+- **[Paperclip](https://github.com/paperclipai/paperclip)** — runtime open-source agentcompanies/v1.
+- **[Guilde](https://guilde.work)** — runtime closed-source agentagencies/v1.
+- **[agentskill.sh](https://agentskill.sh)** — annuaire de 107k+ packages SKILL.md. Par [Yuki Capital](https://yukicapital.com).
+- **[openagentik/mcp](https://github.com/openagentik/mcp)** — pipeline coerce MCP + connecteurs. En cours.
+- **[openagentik/cli](https://github.com/openagentik/cli)** — `npx openagentik init / add / run`. Prévu Q3 2026.
 
-Le travail brillant des autres, organisé pour qu'il soit découvrable et composable :
+## Catalogues
 
-- **agentcompanies/v1** ([Paperclip](https://github.com/paperclipai)) — la spec de base.
-- **Anthropic Skills** ([SKILL.md](https://github.com/agentskills/agentskills)) — le format de capacités.
-- **agentskill.sh** ([Yuki Capital](https://yukicapital.com)) — l'index de 107k+ skills.
-- **Paperclip** — le runtime open-source de référence.
-- **paperasse** ([Romain Simon](https://github.com/romainsimon)) — skills FR (compta, fiscal, notariat).
-- **ostack / gstack** ([mr-daedalium](https://github.com/mr-daedalium) ← [Garry Tan](https://github.com/garrytan)) — workflow d'ingénierie pour Claude Code.
-- **designkit** + **canvakit** — standards design system + templates.
-- **Model Context Protocol** — protocole d'outils.
+- **[paperclipai/companies](https://github.com/paperclipai/companies)** — catalogue d'agences de Paperclip (16+ agences).
+- **[openagentik/companies](https://github.com/openagentik/companies)** — catalogue agentagencies/v1. Écrit ici.
 
-Liste complète + diagramme dans le [README anglais](README.md#what-we-showcase).
+## Agences
 
-## Ce qu'on écrit
+- **[paperasse](https://github.com/openagentik/companies/tree/main/paperasse)** — bureaucratie française (compta, fiscal, notariat, copro). 6 agents, 6 SKILLs. Vendoré depuis [romainsimon/paperasse](https://github.com/romainsimon/paperasse).
+- **[ostack](https://github.com/openagentik/companies/tree/main/ostack)** — équipe d'ingénierie pour Claude Code. 5 agents, 28 SKILLs. Vendoré depuis [mr-daedalium/ostack](https://github.com/mr-daedalium/ostack) ← [garrytan/gstack](https://github.com/garrytan/gstack).
 
-Un petit ensemble de pièces qui comblent des trous :
+Plus d'entrées dans le [catalogue paperclipai](https://github.com/paperclipai/companies) (gstack, agency-agents, Trail of Bits Security, K-Dense Science Lab, …).
 
-- **[agencies-sh/spec](https://github.com/agencies-sh/spec)** — agentagencies/v1, superset strict de agentcompanies/v1 ajoutant un contrat runtime (heartbeat, matrice d'autorité, approbations, plafonds de ressources).
-- **[openagentik/companies](https://github.com/openagentik/companies)** — catalogue d'agences pré-wrappées. Vendors les skills upstream, ajoute la couche manifeste canonique. Aujourd'hui : paperasse + ostack.
-- **[openagentik/templates](https://github.com/openagentik/templates)** — formes de départ (solo-founder, small-team, minimal).
-- **[openagentik/mcp](https://github.com/openagentik/mcp)** — toolkit MCP : pipeline coerce + connecteurs.
-- **[openagentik/cli](https://github.com/openagentik/cli)** — `npx openagentik init / add / run`.
-- **[openagentik/awesome-agentik](https://github.com/openagentik/awesome-agentik)** — liste curée de tout l'écosystème.
+## Templates
 
-## Comment utiliser openagentik
+- **[openagentik/templates](https://github.com/openagentik/templates)** — trois formes de départ pour construire ta propre agence :
+  - `minimal` — agence valide minimale (1 agent)
+  - `solo-founder` — toi + assistant IA (2 agents)
+  - `small-team` — CEO + 3 spécialistes (4 agents)
 
-Tu peux entrer dans le stack au niveau qui te convient :
+## Listes
 
-| Ce que tu veux faire | Commence ici |
-|---|---|
-| Faire tourner une agence existante | [openagentik/companies](https://github.com/openagentik/companies) |
-| Construire la tienne | [openagentik/templates](https://github.com/openagentik/templates) |
-| Lire la spec | [agencies-sh/spec](https://github.com/agencies-sh/spec) |
-| Trouver un skill / connecteur | [agentskill.sh](https://agentskill.sh), [openagentik/mcp](https://github.com/openagentik/mcp) |
-| Parcourir l'écosystème | [openagentik/awesome-agentik](https://github.com/openagentik/awesome-agentik) |
-| Soumettre ton travail | [openagentik/companies/CONTRIBUTING.md](https://github.com/openagentik/companies/blob/main/CONTRIBUTING.md) |
+- **[openagentik/awesome-agentik](https://github.com/openagentik/awesome-agentik)** — liste communautaire d'agences, runtimes, skills et outils.
 
-## Comment on curate
+## Contribuer
 
-Quelques engagements :
-
-- **Attribution d'abord.** Chaque asset vendoré porte `metadata.sources` avec repo + commit + licence.
-- **Filesystem-first.** Une agence est un dossier. Lisible, versionnable, copiable. Pas de DB obligatoire, pas de télémétrie.
-- **Superset strict.** agentagencies/v1 ne casse jamais agentcompanies/v1.
-- **Réactivité ouverte.** Réponse aux issues sous une semaine, PR review sous deux. Si on lâche, dénonce-nous.
-- **Engine-agnostic.** Pas de runtime maison. On t'aide à en choisir un et à bouger tes agences entre eux.
-
-## Reconnaissances
-
-Ce stack serait vapeur sans :
-
-- **[Anthropic](https://www.anthropic.com)** — Claude, format SKILL.md, MCP.
-- **[Paperclip](https://github.com/paperclipai)** — agentcompanies/v1, le pattern catalogue, le runtime open-source.
-- **[Garry Tan](https://github.com/garrytan)** — gstack a lancé tout ce genre.
-- **[mr-daedalium](https://github.com/mr-daedalium)** — ostack adapté pour Claude Code.
-- **[Romain Simon](https://github.com/romainsimon) / [Yuki Capital](https://yukicapital.com)** — paperasse, agentskill.sh, l'écosystème IA français.
-- **toute personne qui ship des skills, runtimes, agences sur GitHub.** Soumets tes choses à [awesome-agentik](https://github.com/openagentik/awesome-agentik).
-
-Si tu maintiens quelque chose qu'on showcase et que tu veux un autre framing — ouvre une issue, on corrige le jour même.
+- Nouvelle agence → [openagentik/companies/CONTRIBUTING.md](https://github.com/openagentik/companies/blob/main/CONTRIBUTING.md)
+- Changement de spec → [agencies-sh/spec/issues](https://github.com/agencies-sh/spec/issues)
+- Entrée awesome-list → [openagentik/awesome-agentik](https://github.com/openagentik/awesome-agentik#contributing)
+- Erreur d'attribution ou de framing → ouvre une issue sur le repo concerné. Réponse le jour même.
 
 ## Licence
 
-Code : MIT. Spec : CC-BY-4.0. Chaque asset vendoré garde sa licence amont — voir le `.upstream.yaml` de chaque repo.
+Code : MIT. Spec : CC-BY-4.0. Les assets vendorés gardent leur licence amont — voir le `.upstream.yaml` de chaque agence.
