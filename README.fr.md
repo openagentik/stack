@@ -5,6 +5,15 @@ Une curation de standards et ressources open-source pour agences IA.
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [🇬🇧 README.md](README.md)
 
+## Pour commencer
+
+- **[Solo founders](docs/for-solo-founders.md)** — chemins pour une activité solo.
+- **[Non-coders](docs/for-non-coders.md)** — ce qui est accessible sans écrire de code.
+- **[Developers](docs/for-developers.md)** — construire un runtime, un connecteur, un validateur, un CLI.
+- **[Agencies](docs/for-agencies.md)** — patterns multi-clients, vendoring par client, white-label.
+- **[Contributors](docs/for-contributors.md)** — soumettre une agence, proposer une spec, traduire.
+- **[FAQ](docs/faq.md)** — Q&R neutres sur le périmètre, la licence, l'écosystème.
+
 ## Standards
 
 - **[agentcompanies/v1](https://agentcompanies.io)** — manifeste portable d'agent-company. Par [Paperclip](https://github.com/paperclipai).
